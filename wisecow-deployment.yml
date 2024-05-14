@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wisecow-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wisecow
+  template:
+    metadata:
+      labels:
+        app: wisecow
+    spec:
+      containers:
+      - name: wisecow
+        image: vishal1017/wisecow:1.0
+        ports:
+        - containerPort: 4499
+        env:
+        - name: SRVPORT
+          value: "4499"
+        - name: RSPFILE
+          value: "/app/response"
+
