@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: wisecow
-        image: vishal1017/wisecow:1.0
+        image: vishal1017/wisecow:latest
         ports:
         - containerPort: 4499
         env:
